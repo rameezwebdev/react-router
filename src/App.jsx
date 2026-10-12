@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Movies } from './pages/Movies';
@@ -6,26 +6,47 @@ import { Contact } from './pages/Contact';
 
 const App = () => {
  
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <Home />
-    },
-    {
-      path: '/about',
-      element: <About />
-    },
-    {
-      path: '/movies',
-      element: <Movies />
-    },
-    {
-      path: '/contact',
-      element: <Contact />
-    },
-  ]);
+  /**
+   * New way to make router
+   */
+  // const router = createBrowserRouter([
+  //   {
+  //     path: '/',
+  //     element: <Home />
+  //   },
+  //   {
+  //     path: '/about',
+  //     element: <About />
+  //   },
+  //   {
+  //     path: '/movies',
+  //     element: <Movies />
+  //   },
+  //   {
+  //     path: '/contact',
+  //     element: <Contact />
+  //   },
+  // ]);
 
-  return <RouterProvider router={router} />
+  /**
+   * Old way, by using helper react router
+   */
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route>
+         <Route path = '/' element = {<Home/>} />
+         <Route path = '/about' element = {<About/>} />
+         <Route path = '/movies' element = {<Movies/>} />
+         <Route path = '/contact' element = {<Contact/>} />
+      </Route>
+    )
+  );
+
+
+  return(
+     <RouterProvider router={router} />
+  ) 
 };
 
 export default App;
