@@ -249,6 +249,14 @@ textarea:focus-visible {
   text-transform: capitalize;
   align-items: center;
 
+.section-navbar .navbar ul li .active{
+  color: #535bf2;
+}  
+
+.active{
+  color: #535bf2;
+}
+
   & li a {
     color: var(--heading-color);
     font-weight: 600;
@@ -1219,3 +1227,4 @@ footer {
   }
 }
 /***** End  media queries Section *****/
+
