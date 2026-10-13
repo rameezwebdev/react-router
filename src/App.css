@@ -1,3 +1,5 @@
+@import url('https://googleapis.com');
+
 * {
   margin: 0;
   padding: 0;
@@ -1227,4 +1229,94 @@ footer {
   }
 }
 /***** End  media queries Section *****/
+ 
+/* Error*/
 
+/* Google Fonts se Serif font import karein */
+
+
+.error-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f9fa; /* Light pastel background */
+  font-family: 'Playfair Display', Georgia, Cambria, serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#error-text {
+  max-width: 550px;
+  text-align: center;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft premium shadow */
+}
+
+#error-text figure {
+  margin: 0 0 30px 0;
+}
+
+#error-text img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Serif Headline Text */
+.p-a {
+  font-size: 1.65rem;
+  color: #2c3e50;
+  line-height: 1.4;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+/* Back Link Style */
+.p-b {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.p-b a {
+  color: #e67e22; /* Warm sophisticated accent color */
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.p-b a:hover {
+  color: #d35400;
+  border-bottom: 1px solid #d35400;
+}
+
+/* Button (NavLink) ki style aapke serif theme ke liye */
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background-color: #2c3e50; /* Elegant dark navy blue */
+  color: #ffffff !important;
+  text-decoration: none;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
+}
+
+.btn:hover {
+  background-color: #e67e22; /* Hover par warm brown/orange transition */
+  box-shadow: 0 6px 20px rgba(230, 126, 34, 0.3);
+  transform: translateY(-2px); /* Soft float effect */
+}

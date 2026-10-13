@@ -5,6 +5,7 @@ import { Movies } from './pages/Movies';
 import { Contact } from './pages/Contact';
 import { AppLayout } from './component/layout/AppLayout';
 import './App.css';
+import ErrorPage from './pages/Error';
 const App = () => {
  
   /**
@@ -15,6 +16,7 @@ const App = () => {
     {
       path: '/',
       element: <AppLayout />,
+      errorElement:<ErrorPage /> ,
       children: [
       {
       path: '/',
