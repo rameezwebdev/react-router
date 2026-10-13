@@ -1,7 +1,12 @@
-import { NavLink, useRouteError } from "react-router-dom"
+import {  useNavigate, useRouteError } from "react-router-dom"
 
 const ErrorPage = () => {
     
+    const navagate = useNavigate();
+
+    const handleNavigation = () => {
+        navagate(-1);
+    };
  
     const error = useRouteError();
 
@@ -26,9 +31,13 @@ const ErrorPage = () => {
                         Back to previous page
                     </p>
 
-                    <NavLink to='/' className='btn'>
+                    {/* <NavLink to='/' className='btn'>
                         BAck To Home
-                    </NavLink>
+                    </NavLink> */}
+
+                    <button className="btn" onClick={handleNavigation}>
+                        Go Back
+                    </button>
                 </div>
             </div>
             
