@@ -1,14 +1,20 @@
-export const getAPIDATA = async() => {
-    try {
-        const respon = await fetch(
-            "http://www.omdbapi.com/?i=tt3896198&apikey=88d40235&s=titanic&page=1"
-        );
+export const getAPIDATA = async () => {
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
-        const result = respon.json();
-        return result;
-        
-    } catch (error) {
-        console.log(error);
-        
+   try {
+    const respon = await fetch(
+      `https://www.omdbapi.com/?apikey=${API_KEY}&s=titanic&page=1`
+    );
+
+    const result = await respon.json();
+
+    if (result.Response === "False") {
+      throw new Error(result.Error);
     }
-}
+
+    return result;
+  } catch (error) {
+    console.error("API Error:", error.message);
+    throw error;
+  }
+};
