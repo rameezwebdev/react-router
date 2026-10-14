@@ -1,9 +1,9 @@
 export const getAPIDATA = async () => {
-  const API_KEY = import.meta.env.VITE_API_KEY;
+  const KEY = import.meta.env.VITE_API_KEY;
 
    try {
     const respon = await fetch(
-      `https://www.omdbapi.com/?apikey=${API_KEY}&s=titanic&page=1`
+      `https://www.omdbapi.com/?apikey=${KEY}&s=titanic&page=1`
     );
 
     const result = await respon.json();
