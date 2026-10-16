@@ -28,8 +28,8 @@ const MoviesDetail = () => {
       <p className="movie-detail__plot"><strong>Plot:</strong> {Plot}</p>
       
       <div className="movie-detail__action">
-        <button className="movie-detail__btn">Watch Now</button>
         <button onClick={handleNavegate} className="movie-detail__btn btn2">Back</button>
+        <button className="movie-detail__btn">Watch Now</button>
       </div>
     </div>
   </div>
