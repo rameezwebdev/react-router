@@ -1,0 +1,116 @@
+/* Page Wrapper Container */
+.movie-detail-container {
+  width: 100%;
+  max-width: 1100px; /* Detail page ke liye standard clean width */
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Main Single Card Design */
+.movie-detail-card {
+  display: flex;
+  flex-direction: column; /* Mobile par poster upar, details neeche */
+  background: #151515;
+  border: 1px solid #292929;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Image/Poster Section */
+.movie-detail__media {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3; /* Movie poster ka standard ratio maintain rahega */
+  background: #222;
+}
+
+.movie-detail__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content Details Section */
+.movie-detail__info {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.movie-detail__title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.movie-detail__genre {
+  color: #e50914; /* Accent color */
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.movie-detail__plot {
+  color: #b3b3b3;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+}
+
+/* Button Section */
+.movie-detail__btn {
+  width: 100%; /* Mobile par fully clickable screen reach button */
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  background: #e50914;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn2{
+  margin-left: 20px;
+}
+
+.movie-detail__btn:hover {
+  background: #ff2530;
+}
+
+/* =======================================================
+   Desktop View: Side-by-Side Cinematic Layout
+   ======================================================= */
+@media (min-width: 768px) {
+  .movie-detail-card {
+    flex-direction: row; /* Desktop par poster left aur details right ho jayengi */
+    align-items: stretch;
+  }
+
+  .movie-detail__media {
+    width: 380px; /* Desktop par poster ki fixed width taaki kharab na ho */
+    flex-shrink: 0;
+  }
+
+  .movie-detail__info {
+    padding: 48px; /* Badi screens par zyada breathing room spacing */
+  }
+
+  .movie-detail__title {
+    font-size: 2.8rem; /* Bada and bold typography */
+  }
+
+  .movie-detail__btn {
+    width: max-content; /* Desktop par button auto wrap ho jayega jitna text hai */
+    font-size: 17px;
+  }
+}

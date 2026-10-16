@@ -7,6 +7,8 @@ import { AppLayout } from './component/layout/AppLayout';
 import './App.css';
 import ErrorPage from './pages/Error';
 import { getAPIDATA } from './api/GetAPIData';
+import MoviesDetail from './component/UI/MoviesCard';
+import { getMovieDetail } from './api/GetMovieDetail';
 const App = () => {
  
   /**
@@ -33,6 +35,12 @@ const App = () => {
       path: '/movies',
       element: <Movies />,
       loader: getAPIDATA, 
+      },
+
+      {
+      path: '/movies/:movieID',
+      element: <MoviesDetail />,
+      loader: getMovieDetail,
       },
 
       {

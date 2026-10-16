@@ -17,7 +17,7 @@ export const MovieCard = ({currMovie}) => {
                     <h2 className="title">{Title}</h2>
                 <div className="ticket-container">
                     <div className="ticket_content">
-                        <NavLink to=''>
+                        <NavLink to={`/movies/${imdbID}`}>
                             <button className="ticket_buy-btn">
                                 Watch Now
                             </button>
