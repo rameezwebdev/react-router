@@ -2,10 +2,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Movies } from './pages/Movies';
-import { Contact } from './pages/Contact';
+import { Contact, contactData } from './pages/Contact';
 import { AppLayout } from './component/layout/AppLayout';
-import './index.css';
-import ErrorPage from './pages/Error';
+import './App.css';
+import { NotFound } from './pages/Error';
 import { getAPIDATA } from './api/GetAPIData';
 import MoviesDetail from './component/UI/MoviesCard';
 import { getMovieDetail } from './api/GetMovieDetail';
@@ -19,7 +19,7 @@ const App = () => {
     {
       path: '/',
       element: <AppLayout />,
-      errorElement:<ErrorPage /> ,
+      errorElement:<NotFound /> ,
       children: [
       {
       path: '/',
@@ -45,7 +45,8 @@ const App = () => {
 
       {
       path: '/contact',
-      element: <Contact />
+      element: <Contact />,
+      action:contactData,
       },
      ]
 

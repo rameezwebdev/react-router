@@ -1,49 +1,32 @@
-import {  useNavigate, useRouteError } from "react-router-dom"
+import { NavLink, useRouteError } from "react-router-dom";
 
-const ErrorPage = () => {
-    
-    const navagate = useNavigate();
+export const NotFound = () => {
+  const error = useRouteError();
 
-    const handleNavigation = () => {
-        navagate(-1);
-    };
- 
-    const error = useRouteError();
+  if (error.status === 404) {
+    return (
+      <section className=" error-section">
+        <div id="error-text">
+          <figure>
+            <img
+              src="https://cdn.dribbble.com/users/722246/screenshots/3066818/404-page.gif"
+              alt="404 page"
+            />
+          </figure>
+          <div className="text-center">
+            <p className="p-a">
+              . The page you were looking for could not be found
+            </p>
+            <p className="p-b">... Back to previous page</p>
+          </div>
+        </div>
+        <NavLink to="/" className="btn">
+          Go Back To HomePage
+        </NavLink>
+      </section>
+    );
+  }
+  console.log(error);
 
-    if(error.status !== 404){
-       console.log('all okey');
-    }
-
-  return (
-        <section className="error-section">
-            <div id="error-text">
-                <figure>
-                    <img 
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxvTEtz0uvIWvEglF33uGLb9-n5KFH94KGEdzvB0xd4qkwOgy-iAbYYeJL&s=10" 
-                    alt="404 Error"
-                    />
-                </figure>
-                <div className="text-center">
-                    <p className="p-a">
-                        The Page you looking for  could not fiund
-                    </p>
-                    <p className="p-b">
-                        Back to previous page
-                    </p>
-
-                    {/* <NavLink to='/' className='btn'>
-                        BAck To Home
-                    </NavLink> */}
-
-                    <button className="btn" onClick={handleNavigation}>
-                        Go Back
-                    </button>
-                </div>
-            </div>
-            
-
-        </section>
-  )
-}
-
-export default ErrorPage
+  return <h1> The page you are looking does not exist </h1>;
+};
