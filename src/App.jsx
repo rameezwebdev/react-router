@@ -4,7 +4,7 @@ import { About } from './pages/About';
 import { Movies } from './pages/Movies';
 import { Contact } from './pages/Contact';
 import { AppLayout } from './component/layout/AppLayout';
-import './App.css';
+import './index.css';
 import ErrorPage from './pages/Error';
 import { getAPIDATA } from './api/GetAPIData';
 import MoviesDetail from './component/UI/MoviesCard';
